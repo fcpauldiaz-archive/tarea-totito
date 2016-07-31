@@ -1,0 +1,13 @@
+{
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "fcpauldiaz",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0",
+    "gulp-sass": "^2.3.2"
+  }
+}

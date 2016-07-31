@@ -1,0 +1,98 @@
+//variables
+$reloj-width: 600px;
+$reloj-size: $reloj-width*0.75;
+$reloj-background: gray;
+$label-size: 30px;
+$centro-reloj-x: 10%;
+$centro-reloj-y: 20%;
+$label-width: 430px;
+$label-heigth: $label-width*0.75;
+
+.reloj{
+  position: relative;
+  background: $reloj-background;
+  margin-bottom: 10px;
+  padding: $reloj-width*0.1;
+  width: $reloj-width;
+
+}
+.circulo{
+    position: relative;
+    background: white;
+    border-radius: 100%;
+    height: $reloj-size;
+    width: $reloj-size;
+}
+.label {
+  position: absolute;
+  font-size: $label-size;
+  font-weight: bold;
+  position: absolute;
+  height: $label-heigth;
+  width: $label-width;
+  left: $centro-reloj-x;
+  top: $centro-reloj-y;
+
+  //colocar todos los números alrededor
+  $offset: 0;
+  @for $i from 1 through 12 {
+    &.label-#{$i}  {
+    transform: rotate(50deg+$offset);
+    $offset: $offset + 30;
+     
+    }
+
+  }
+  //forma de arreglar la rotación interna de los números
+  $inner-transform: 280;
+  @for $i from 1 through 12 {
+    >.inner-label-#{$i}  {
+     transform: rotate(0deg+$inner-transform);
+    transform-origin: top left;
+    $inner-transform: $inner-transform - 30;
+     
+    }
+
+  }
+
+}
+  
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.hours {
+  background: green;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+.minutes {
+  background: blue;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+.seconds {
+  background: yellow;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+}
+.digital {
+  visibility: hidden;
+  left:80%;
+}

@@ -1,0 +1,122 @@
+.reloj {
+  position: relative;
+  background: gray;
+  margin-bottom: 10px;
+  padding: 60px;
+  width: 600px; }
+
+.circulo {
+  position: relative;
+  background: white;
+  border-radius: 100%;
+  height: 450px;
+  width: 450px; }
+
+.label {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  height: 322.5px;
+  width: 430px;
+  left: 10%;
+  top: 20%; }
+  .label.label-1 {
+    transform: rotate(50deg); }
+  .label.label-2 {
+    transform: rotate(80deg); }
+  .label.label-3 {
+    transform: rotate(110deg); }
+  .label.label-4 {
+    transform: rotate(140deg); }
+  .label.label-5 {
+    transform: rotate(170deg); }
+  .label.label-6 {
+    transform: rotate(200deg); }
+  .label.label-7 {
+    transform: rotate(230deg); }
+  .label.label-8 {
+    transform: rotate(260deg); }
+  .label.label-9 {
+    transform: rotate(290deg); }
+  .label.label-10 {
+    transform: rotate(320deg); }
+  .label.label-11 {
+    transform: rotate(350deg); }
+  .label.label-12 {
+    transform: rotate(380deg); }
+  .label > .inner-label-1 {
+    transform: rotate(280deg);
+    transform-origin: top left; }
+  .label > .inner-label-2 {
+    transform: rotate(250deg);
+    transform-origin: top left; }
+  .label > .inner-label-3 {
+    transform: rotate(220deg);
+    transform-origin: top left; }
+  .label > .inner-label-4 {
+    transform: rotate(190deg);
+    transform-origin: top left; }
+  .label > .inner-label-5 {
+    transform: rotate(160deg);
+    transform-origin: top left; }
+  .label > .inner-label-6 {
+    transform: rotate(130deg);
+    transform-origin: top left; }
+  .label > .inner-label-7 {
+    transform: rotate(100deg);
+    transform-origin: top left; }
+  .label > .inner-label-8 {
+    transform: rotate(70deg);
+    transform-origin: top left; }
+  .label > .inner-label-9 {
+    transform: rotate(40deg);
+    transform-origin: top left; }
+  .label > .inner-label-10 {
+    transform: rotate(10deg);
+    transform-origin: top left; }
+  .label > .inner-label-11 {
+    transform: rotate(-20deg);
+    transform-origin: top left; }
+  .label > .inner-label-12 {
+    transform: rotate(-50deg);
+    transform-origin: top left; }
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.hours {
+  background: green;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%; }
+
+.minutes {
+  background: blue;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%; }
+
+.seconds {
+  background: yellow;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8; }
+
+.digital {
+  visibility: hidden;
+  left: 80%; }
