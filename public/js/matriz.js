@@ -7,7 +7,35 @@ var Matriz = function() {
 	];
 }
 Matriz.prototype.verificarGanador = function() {
+	var tipoVerificador = '';
+	var contador = 0;
+	var last = -1;
 	//verificar ganador
+	for (i = 0; i < this.matrix.length ; i++) {
+		for (j = 0; j < this.matrix[i].length; j++){
+			
+			var tipo = this.matrix[i][j];
+			if (tipo != -1){
+				console.log('entra');
+				console.log(tipo);
+				console.log(tipoVerificador);
+				if ((i == last || j == last) && tipo == tipoVerificador) {
+					contador++;
+				}
+				if (contador == 3){
+					alert('gano');
+					contador = 0;
+				}
+				if (last != i) {
+					last = i;
+				}
+				tipoVerificador = tipo;
+			}
+
+			//console.log(this.matrix[i][j]);
+		}
+	}
+	console.log(this.matrix);
 }
 Matriz.prototype.insertarCambio = function(cambio, posicion) {
 	posicion = posicion.substring(5);

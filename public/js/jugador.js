@@ -1,13 +1,11 @@
+//objeto jugador
 var jugador = {
 	//valores iniciales
 	numero: "1",
-	symbolo: "equis",
+	symbol: "equis",
 	//función para cambiar de jugador
-	cambiarEstado: function() {
-		var number = document.getElementById("player-number");
-		var symbol = document.getElementById("player-symbol");
+	cambiarEstado: function(number, symbol) {
 		if (this.numero == "1"){
-			console.log('cambia');
 			number.innerHTML = "2";
 			symbol.innerHTML = "Círculo";
 			this.numero = "2";
@@ -21,6 +19,7 @@ var jugador = {
 			//devuelve el estado anterior;
 			return "circulo";
 		}
+		//si llega aquí hay error.
 		
 	}
 }

@@ -1,13 +1,32 @@
 //variables
 $grid-color: gray;
-$cell-height: 200px;
-$cell-width: 250px;
+$cell-height: 175px;
+$cell-width: $cell-height + 50;
 $player-square: 300px;
 $font-size: 40px;
+$symbol-size: 200px;
+$font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, 'Times New Roman', serif;
+
+//mixin para el símbolo X o O
+@mixin symbol($color) {
+  position:absolute;
+  padding-top: 100px;
+  padding-left: 30px;
+  font-size: $symbol-size;
+  font-family: $font-family;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  color: $color;
+
+}
+
 
 h1 {
   font-size: $font-size;
 }
+
 .grid
 {
   display: table;
@@ -24,12 +43,15 @@ h1 {
       padding-right: 5px;
       height: $cell-height;
       width: $cell-width;
+      >.inner-cell-x{
+        @include symbol(blue);
+      }
+      >.inner-cell-o{
+        @include symbol(orange);
+      }
     }
   }
 }
-
-
-
 
 .player {
   position: absolute;
