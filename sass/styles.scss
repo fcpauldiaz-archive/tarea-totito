@@ -6,7 +6,9 @@ $player-square: 300px;
 $font-size: 40px;
 $symbol-size: 200px;
 $font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, 'Times New Roman', serif;
-
+$alert-color: #2196F3;
+$button-color: #4CAF50;
+$button-hover-color: #f44336;
 //mixin para el símbolo X o O
 @mixin symbol($color) {
   position:absolute;
@@ -22,11 +24,38 @@ $font-family: 'Hoefler Text', 'Baskerville Old Face', Garamond, 'Times New Roman
 
 }
 
+.alert {
+  padding: 20px;
+  background-color: $alert-color;
+  color: white;
+  margin-bottom: 15px;
+  height: 150px;
+  font-size: 100px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.closebtn:hover {
+    color: black;
+}
 
 h1 {
   font-size: $font-size;
 }
 
+.hide{
+  visibility: hidden;
+  display: none;
+}
 .grid
 {
   display: table;
@@ -52,7 +81,19 @@ h1 {
     }
   }
 }
-
+.new-game {
+  padding: 20px;
+  background-color: $button-color;
+  color: white;
+  margin-bottom: 15px;
+  height: 150px;
+  font-size: 100px;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $button-hover-color;
+    border: 5px solid  $button-hover-color;
+  }
+}
 .player {
   position: absolute;
   width: $player-square;
@@ -63,4 +104,3 @@ h1 {
   left: 850px;
   top: 0px;
 }
-

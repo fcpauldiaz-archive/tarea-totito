@@ -10,6 +10,7 @@ Matriz.prototype.verificarGanador = function() {
 	var tipoVerificador = '';
 	var contador = 0;
 	var last = -1;
+	var ganador = '';
 	//verificar ganador
 	//Primera pasada para verificar horizontal
 	for (i = 0; i < this.matrix.length ; i++) {
@@ -25,7 +26,7 @@ Matriz.prototype.verificarGanador = function() {
 					tipoVerificador = 'not';
 				}
 				if (contador == 3){
-					alert('gano');
+					ganador = tipo;
 					contador = 0;
 				}
 				
@@ -48,7 +49,7 @@ Matriz.prototype.verificarGanador = function() {
 					tipoVerificador = 'not';
 				}
 				if (contador == 3){
-					alert('gano');
+					ganador = tipo;
 					contador = 0;
 				}	
 			}
@@ -57,63 +58,54 @@ Matriz.prototype.verificarGanador = function() {
 		tipoVerificador = '';
 	}
 	//tercero: verficar diagonales
-
 	if ((this.matrix[0][0] == 'equis' &&
 		this.matrix[1][1] == 'equis' &&
-		this.matrix[2][2] == 'equis')||
+		this.matrix[2][2] == 'equis')
+		)
+	{
+		ganador = 'equis';
+	}
+	if (
 		this.matrix[0][0] == 'circulo' &&
 		this.matrix[1][1] == 'circulo' &&
 		this.matrix[2][2] == 'circulo'
 		)
 	{
-		alert('gano');
+		ganador = 'circulo';
 	}
 
-	if ((this.matrix[2][0] == 'equis' &&
+	if (
+		this.matrix[2][0] == 'equis' &&
 		this.matrix[1][1] == 'equis' &&
-		this.matrix[0][2] == 'equis')||
+		this.matrix[0][2] == 'equis'
+	   )
+	{
+		ganador = 'equis';
+	}
+	if (
 		this.matrix[2][0] == 'circulo' &&
 		this.matrix[1][1] == 'circulo' &&
 		this.matrix[0][2] == 'circulo'
 		)
 	{
-		alert('gano');
+		ganador = 'circulo';
 	}
 
-	
+	return ganador;
 
 }
 Matriz.prototype.insertarCambio = function(cambio, posicion) {
 	posicion = posicion.substring(5);
-	
-	switch(posicion) {
-		case "1":
-			this.matrix[0][0] = cambio;
-			break;
-		case "2":
-			this.matrix[0][1] = cambio;
-			break;
-		case "3":
-			this.matrix[0][2] = cambio;
-			break;
-		case "4":
-			this.matrix[1][0] = cambio;
-			break;
-		case "5":
-			this.matrix[1][1] = cambio;
-			break;
-		case "6":
-			this.matrix[1][2] = cambio;
-			break;
-		case "7":
-			this.matrix[2][0] = cambio;
-			break;
-		case "8":
-			this.matrix[2][1] = cambio;
-			break;
-		case "9":
-			this.matrix[2][2] = cambio;
-			break;
+	var contador = 1;
+	for (i = 0; i < this.matrix.length ; i++) {
+		for (j = 0; j < this.matrix[i].length; j++) {
+			if (contador == posicion) {
+				this.matrix[i][j] = cambio;
+				
+			}
+			
+			contador++;
+		}
 	}
 }
 
