@@ -47,7 +47,14 @@ window.onload = function(){
 			grid = document.getElementsByClassName("grid")[0];
 			grid.remove();
 		}
-		console.log(matriz.getMatrix());
+		if (ganador == 'ninguno') {
+			document.getElementsByClassName("new-game")[0].classList.remove("hide");
+			document.getElementsByClassName("alert")[0].classList.remove("hide");
+			document.getElementsByClassName("player")[0].classList.add("hide");
+			document.getElementsByClassName("alert")[0].innerHTML = '<strong>Ningún</strong> jugador ganado!'
+			grid = document.getElementsByClassName("grid")[0];
+			grid.remove();
+		}
 	}
 	//sirve para poner el evento en todas las celdas.
 	var classname = document.getElementsByClassName("cell");

@@ -11,6 +11,7 @@ Matriz.prototype.verificarGanador = function() {
 	var contador = 0;
 	var last = -1;
 	var ganador = '';
+	var ganadorReal = false;
 	//verificar ganador
 	//Primera pasada para verificar horizontal
 	for (i = 0; i < this.matrix.length ; i++) {
@@ -29,7 +30,11 @@ Matriz.prototype.verificarGanador = function() {
 					ganador = tipo;
 					contador = 0;
 				}
-				
+
+			}
+			
+			if (Number.isInteger(tipo)) {
+				ganadorReal = true;
 			}
 		}
 		contador = 0;
@@ -89,6 +94,10 @@ Matriz.prototype.verificarGanador = function() {
 		)
 	{
 		ganador = 'circulo';
+	}
+
+	if (!ganadorReal) {
+		ganador = 'ninguno';
 	}
 
 	return ganador;
