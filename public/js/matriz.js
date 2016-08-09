@@ -101,11 +101,12 @@ Matriz.prototype.insertarCambio = function(cambio, posicion) {
 		for (j = 0; j < this.matrix[i].length; j++) {
 			if (contador == posicion) {
 				this.matrix[i][j] = cambio;
-				
 			}
-			
 			contador++;
 		}
 	}
+}
+Matriz.prototype.getMatrix = function() {
+	return this.matrix;
 }
 

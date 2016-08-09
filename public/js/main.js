@@ -1,3 +1,5 @@
+//inicializar grid
+init();
 window.onload = function(){
 	
 	var gridChanges = false; //empieza con el equis
@@ -5,7 +7,8 @@ window.onload = function(){
 	var symbol = document.getElementById("player-symbol");
 	var number = document.getElementById("player-number");
 
-	function changeImage() {
+
+	function render() {
 
 	   	var posicion = this.getAttribute("id");
 	   	var element = document.getElementById(posicion);
@@ -32,7 +35,8 @@ window.onload = function(){
 			document.getElementsByClassName("alert")[0].classList.remove("hide");
 			document.getElementsByClassName("player")[0].classList.add("hide");
 			document.getElementsByClassName("alert")[0].innerHTML = 'El <strong>jugador 1</strong> ha ganado!'
-
+			grid = document.getElementsByClassName("grid")[0];
+			grid.remove();
 		}
 		//gana jugador 2
 		if (ganador == 'circulo') {
@@ -40,14 +44,15 @@ window.onload = function(){
 			document.getElementsByClassName("alert")[0].classList.remove("hide");
 			document.getElementsByClassName("player")[0].classList.add("hide");
 			document.getElementsByClassName("alert")[0].innerHTML = 'El <strong>jugador 2</strong> ha ganado!'
-
+			grid = document.getElementsByClassName("grid")[0];
+			grid.remove();
 		}
+		console.log(matriz.getMatrix());
 	}
-
 	//sirve para poner el evento en todas las celdas.
 	var classname = document.getElementsByClassName("cell");
 	for (var i = 0; i < classname.length; i++) {
-	    classname[i].addEventListener('click', changeImage, false);
+	    classname[i].addEventListener('click', render, false);
 	    classname[i].addEventListener('click', verificarGanador, false);
 	}
 	//botón de reset
