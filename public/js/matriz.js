@@ -96,7 +96,7 @@ Matriz.prototype.verificarGanador = function() {
 		ganador = 'circulo';
 	}
 
-	if (!ganadorReal) {
+	if (!ganadorReal && ganador != 'circulo' && ganador != 'equis') {
 		ganador = 'ninguno';
 	}
 

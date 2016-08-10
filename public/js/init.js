@@ -1,9 +1,8 @@
 function init() {
 	var viewport  = document.getElementById("viewport");
 	viewport.innerHTML = `
-		<div class="alert hide">
+	<div class="alert hide">
       <span class="closebtn">&times;</span>
-    
     </div>
     <button class="new-game hide" id="new-game-button">Nuevo Juego</button>
     <div class="grid">
@@ -23,10 +22,10 @@ function init() {
             <div class="cell" id="cell-9"></div>
         </div>
     </div>
-        <div class="player">
-            <h1>Turno</h1>
-            <h1>Jugador: #<span id="player-number">1</span></h1>
-            <h1>Figura: <span id="player-symbol">Equis</span></h1>
-        </div>`;
+    <div class="player">
+        <h1>Turno</h1>
+        <h1>Jugador: #<span id="player-number">1</span></h1>
+        <h1>Figura: <span id="player-symbol">Equis</span></h1>
+    </div>`;
 
 }
